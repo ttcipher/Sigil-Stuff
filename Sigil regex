@@ -1,0 +1,301 @@
+
+
+*****************************************************
+Multiple changing a href tags
+
+Find:  <a[^>]*>([^<]+)</a>
+
+Replace:  \1
+
+*****************************************************
+
+Properly center text lists under centered H tags
+
+center; text-indent:0em;"
+
+*****************************************************
+
+Find:  
+
+([a-z])</span></p>\s+<p class="calibre2"><span class="none1">
+
+([a-z])</p>\s+<p>
+
+([,])</p>\s+<p>
+
+Replace:
+
+\1
+
+(that's \1 space)
+
+*****************************************************
+
+Text chunk that has no space after puncuation, most often a period.
+
+Find:  
+
+([a-z])\.+([A-Z])
+
+Replace:
+
+\1. \2
+
+Mind the space between the . and the \ above...
+
+*****************************************************
+
+Removing bad paragraph breaks automatically
+
+Find:
+
+([a-z])</span></p>\s+<p class="calibre2"><span class="none1">
+
+ 
+Replace:
+
+
+\1
+
+
+Since a lowercase letter at the end of a paragraph is ALWAYS an error, you can hit Replace All without a care.
+
+
+*****************************************************
+
+Paragraph starts with a lower case letter:
+(NOT bad line break)
+
+<p>([a-z])
+<p>\U\1
+
+*****************************************************
+
+Remove nested span tags, replace with p tags:
+
+<div class="offset">([^<]+)<span class="calibre1">([^<]+)</span>?  </div>
+<div class="offset"><p>\1 \2</p></div>
+
+
+<div class="c">?  </div>
+
+*****************************************************
+
+<p> text <p>  text </p>  problem
+
+Find:     <p>([^<]+)<p>
+
+Replace:  <p>\1
+
+
+<p>([^<]+)<p>
+<p>\1</p>\n<p>
+
+*****************************************************
+
+<p class="figure"><a id=([^<]+)/><em>([^<]+)</em>.</p>
+<p class="figure"><a id=\2/><i>([^<]+)</i>.</p> <hr />
+
+width="75%"
+
+
+
+
+1
+<h1 class="chapter0" id="c01"><a id="page5"/>1</h1>
+                            1
+<h2 style="text-align:center;">1</h2>
+ find:
+
+<h1[^>]*><a id[^>]*>([^<]+)</h1>
+
+Replace all:
+
+<h2 style="text-align:center;">\1</h2>
+
+
+*****************************************************
+
+Find:
+<p class="indexmain([^<]*)>([^<]+)</p>
+
+  <p class="normal">
+
+Replace:
+
+<p class="indexmain\1>\2</p>
+</div>
+  <p class="normal">
+
+
+
+
+
+<a\b[^>]*>(.*?)</a>
+
+<a\b[^>]*>(((?!</?a).)*)</a>
+
+
+    <meta name="cover" content="cover" />
+*****************************************************
+
+CLONED IMAGES
+
+<img alt="line.gif" class="sgc1" src="../Images/(.*?).jpeg" />
+
+<div class="offset"><img alt="line.gif" class="sgc1" src="../Images/00003.jpeg" /></div>
+
+
+*****************************************************
+
+chapter start quote
+
+<p style="margin-top:0em; margin-bottom:0em; font-size: 1.2em; text-indent: 0em;"><i> </i></p>
+
+<p style="margin-top:0em; margin-bottom:0em; font-size: 1.0em; text-indent: 0em;"> </p>
+
+
+*****************************************************
+Chapter title in box:
+
+<body>
+  <div class="textbox">
+
+<div class="textbox2>
+
+
+    <h2></h2>
+    <h2></h2>
+  </div>
+<p></p>
+  <p class="MsoNormal1"/>
+  <p class="MsoNormal2"/>
+<p class="MsoNormal2"><span><br/></span></p>
+
+*****************************************************
+
+TOC
+
+<body>
+  <h2>CONTENTS</h2>
+
+  <p style="text-indent:0em">Horrible Example<br />
+  The Civilisation Game<br />
+  Hermit of Mars<br />
+  Masquerade<br />
+  Buckets of Diamonds<br />
+  Hunch</p>
+
+  <p class="calibre3"><br /></p>
+</body>
+
+
+*****************************************************
+
+Non line break chapter head
+
+
+<link href="../Styles/page_styles.css" rel="stylesheet" type="text/css" /><link href="../Styles/Astylesheet.css" rel="stylesheet" type="text/css" />
+</head>
+
+
+<body class="calibre">
+  <p class="calibre3"><br /></p>
+
+  <p class="calibre3">Hermit of Mars <br class="calibre3" /></p>
+ <p class="calibre3">Clifford D. Simak <br class="calibre3" /></p>
+   <p class="calibre3">Copyright 1939 </p><p class="calibre3"><br /></p>
+
+
+
+
+<p style="text-indent:0em;"><i>            </i></p></span>
+
+
+<pre>
+
+</pre>
+
+<h1 style="text-indent:0;">
+<p class="style" style=" text-indent:0; text-align: center;">
+
+
+*****************************************************
+
+EPIGRAPH
+
+  <h3 style="text-align: left; margin-top:0em; margin-bottom:0em;"><i>Every man is as Heaven made him</i>,</h3>
+
+  <h3 style="text-align: left; margin-top:0em; margin-bottom:0em;"><i>and sometimes a great deal worse</i>.</h3>
+
+  <p style="text-align: left; text-indent:0em;">—Cervantes</p>
+
+*****************************************************
+
+Find Replace
+
+<span epub:type="pagebreak" id="page22" title="22">
+
+<span epub:type="pagebreak".*?>
+
+
+
+
+<a href=.*?>\([^<]+)</a>
+
+
+\1
+
+
+<div class="offset">  </div>   </i></div>
+
+</div>
+
+<div class="copy"> </div>
+
+
+<div class="ded"> </div>
+
+<div class="u"> </div>
+
+  <hr />
+<FONT COLOR="6495ED"> </FONT>
+
+<p style="font-family: Courier;">
+
+*****************************************************
+
+Underline (other deprecated tags)
+
+
+<div class="u"> </div>
+
+
+
+Format:  <div><p> or <h2>  text  <p> or <h2>  <div>
+
+
+
+
+*****************************************************
+
+
+<span style="color:red">  </span>
+
+
+*****************************************************
+
+<div class="epi"> </div>
+
+  <div class="epi" style="font-size:1.4em;"></div>
+
+
+
+    “A dead man cannot bite.”&nbsp;
+  </div>
+
+ <div class="epi" style="font-size:1.2em;">
+    &nbsp;—Gnaeus Pompeius
+  </div>
+
+**************************************************************
